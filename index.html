@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>alx.bg — Remove background</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>alx.bg</h1>
+    <p class="lead">Upload an image — we'll remove the background.</p>
+
+    <form id="uploadForm" enctype="multipart/form-data" method="post" action="/upload">
+      <label class="dropzone" id="dropzone">
+        <input type="file" name="image" id="imageInput" accept="image/*">
+        <div class="dz-content">
+          <strong>Click or drop an image here</strong>
+          <small>PNG, JPG, JPEG — up to 10MB</small>
+        </div>
+      </label>
+
+      <div class="controls">
+        <button type="submit" class="btn">Upload & Remove Background</button>
+      </div>
+    </form>
+
+    <section id="result" class="result" hidden>
+      <h2>Result</h2>
+      <div class="images">
+        <div>
+          <h3>Original</h3>
+          <img id="origImg" alt="original">
+        </div>
+        <div>
+          <h3>Processed</h3>
+          <img id="procImg" alt="processed">
+        </div>
+      </div>
+      <a id="downloadBtn" class="btn" download="alx_bg.png">Download PNG</a>
+    </section>
+
+    <footer>
+      <small>Prototype — not a production-ready background remover. See README to enable rembg or external API.</small>
+    </footer>
+  </main>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
